@@ -1,0 +1,36 @@
+#ifndef MY_MENU_H
+#define MY_MENU_H
+
+#include <QObject>
+#include <QWidget>
+#include <QPushButton>
+#include <QCheckBox>
+#include <QLabel>
+#include <QMainWindow>
+#include <QMenu>
+#include <QMenuBar>
+#include "Mymap.h"
+
+class my_menu:public QMainWindow
+{
+    Q_OBJECT
+public:
+    my_menu(QWidget *parent = nullptr);\
+    ~my_menu();
+
+protected:
+    void paintEvent(QPaintEvent *event) override;
+
+private:
+    my_map *map;
+    QPushButton *startBtn;
+    QPushButton *fileBtn;//读档
+    QCheckBox *modeSelection;
+    QCheckBox *timerSelection;
+    QCheckBox *propSelection;
+    QLabel *helpInfo;
+    //QMenuBar *menuBar;
+
+};
+
+#endif // MY_MENU_H
